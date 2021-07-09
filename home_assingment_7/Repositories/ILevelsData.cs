@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace home_assingment_7.Repositories
 {
-   public interface ILevelData
+   public interface ILevelsData
     {
-        List<Level> GetLevels();
+        List<Levels> GetLevels();
 
-        void AddLevel(Level level);
+        void AddLevel(Levels level);
 
 
 

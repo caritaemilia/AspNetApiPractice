@@ -28,10 +28,10 @@ namespace home_assingment_7
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddDbContext<home_assignment_7Context>(options => options.UseNpgsql(@"Server=PostgreSQL 13;Host=localhost;Port=5432;Username=postgres;Password=root;Database=home_assignment_7"));
-            services.AddScoped<ILevelData, LevelsRepo>();
-            services.AddScoped<IPlayerData, PlayersRepo>();
-            services.AddScoped<IScoreData, ScoresRepo>();
+            services.AddDbContext<home_assignment_7Context>(options => options.UseNpgsql("your database address here"));
+            services.AddScoped<ILevelsData, LevelsRepo>();
+            services.AddScoped<IPlayersData, PlayersRepo>();
+            services.AddScoped<IScoresData, ScoresRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

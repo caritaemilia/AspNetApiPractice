@@ -11,11 +11,11 @@ namespace home_assingment_7.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PlayerController : ControllerBase
+    public class PlayersController : ControllerBase
     {
-        private IPlayerData _playerData;
+        private IPlayersData _playerData;
 
-        public PlayerController(IPlayerData playerData)
+        public PlayersController(IPlayersData playerData)
         {
             _playerData = playerData;
         }
@@ -28,7 +28,7 @@ namespace home_assingment_7.Controllers
         }
 
         [HttpPost]
-        public IActionResult GetPlayer(Player player)
+        public IActionResult CreatePlayer(Players player)
         {
            _playerData.AddPlayer(player);
             return Created(HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + HttpContext.Request.Path + player.Id, player);

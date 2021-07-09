@@ -17,16 +17,15 @@ namespace home_assingment_7.Models
         {
         }
 
-        public virtual DbSet<Level> Levels { get; set; }
-        public virtual DbSet<Player> Players { get; set; }
-        public virtual DbSet<Score> Scores { get; set; }
+        public virtual DbSet<Levels> Levels { get; set; }
+        public virtual DbSet<Players> Players { get; set; }
+        public virtual DbSet<Scores> Scores { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseNpgsql("Server=PostgreSQL 13;Host=localhost;Port=5432;Username=postgres;Password=root;Database=home_assignment_7");
+                optionsBuilder.UseNpgsql("your address here");
             }
         }
 
@@ -34,7 +33,7 @@ namespace home_assingment_7.Models
         {
             modelBuilder.HasAnnotation("Relational:Collation", "Finnish_Finland.1252");
 
-            modelBuilder.Entity<Level>(entity =>
+            modelBuilder.Entity<Levels>(entity =>
             {
                 entity.ToTable("levels");
 
@@ -46,7 +45,7 @@ namespace home_assingment_7.Models
                     .HasColumnName("name");
             });
 
-            modelBuilder.Entity<Player>(entity =>
+            modelBuilder.Entity<Players>(entity =>
             {
                 entity.ToTable("players");
 
@@ -60,7 +59,7 @@ namespace home_assingment_7.Models
                     .HasColumnName("user_name");
             });
 
-            modelBuilder.Entity<Score>(entity =>
+            modelBuilder.Entity<Scores>(entity =>
             {
                 entity.ToTable("scores");
 

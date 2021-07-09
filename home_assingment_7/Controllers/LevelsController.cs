@@ -11,10 +11,10 @@ namespace home_assingment_7.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class LevelController : ControllerBase
+    public class LevelsController : ControllerBase
     {
-        private ILevelData _levelData;
-        public LevelController(ILevelData levelData)
+        private ILevelsData _levelData;
+        public LevelsController(ILevelsData levelData)
         {
             _levelData = levelData;
         }
@@ -27,7 +27,7 @@ namespace home_assingment_7.Controllers
 
 
         [HttpPost]
-        public IActionResult GetLevel(Level level)
+        public IActionResult CreateLevel(Levels level)
         {
             _levelData.AddLevel(level);
             return Created(HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + HttpContext.Request.Path + level.Id, level);

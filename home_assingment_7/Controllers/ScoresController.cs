@@ -11,25 +11,25 @@ namespace home_assingment_7.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ScoreController : ControllerBase
+    public class ScoresController : ControllerBase
     {
 
-        private IScoreData _scoreData;
-        public ScoreController(IScoreData scoreData)
+        private IScoresData _scoreData;
+        public ScoresController(IScoresData scoreData)
         {
             _scoreData = scoreData;
         }
 
 
         [HttpGet]
-        public IActionResult GeScores()
+        public IActionResult GetScores()
         {
             return Ok(_scoreData.GetScores());
         }
 
 
-        [HttpGet("{id}")]
-        public IActionResult GetScores(int id)
+        [HttpGet("{scoreId:int}")]
+        public IActionResult GetScoreById(int id)
         {
             var score = _scoreData.GetScore(id);
             if (score != null)
@@ -41,7 +41,7 @@ namespace home_assingment_7.Controllers
         }
 
         [HttpPost]
-        public IActionResult GetScore(Score score)
+        public IActionResult CreateScore(Scores score)
         {
             _scoreData.AddScore(score);
             return Created(HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + HttpContext.Request.Path + score.Id, score);
@@ -49,7 +49,7 @@ namespace home_assingment_7.Controllers
         }
 
         [HttpDelete]
-        [Route("api/[controller]/{id}")]
+        [Route("{scoreId:int}")]
         public IActionResult DeleteScore(int id)
         {
             var score = _scoreData.GetScore(id);

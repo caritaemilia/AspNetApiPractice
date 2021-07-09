@@ -6,8 +6,7 @@ using home_assingment_7.Models;
 
 namespace home_assingment_7.Repositories
 {
-    //getting all players from, and adding a new player to the database<br>*
-    public class PlayersRepo : IPlayerData
+    public class PlayersRepo : IPlayersData
     {
         private readonly home_assignment_7Context _context;
         public PlayersRepo(home_assignment_7Context context)
@@ -15,10 +14,9 @@ namespace home_assingment_7.Repositories
             _context = context;
         }
 
-        // get all players from the databas
-        public List<Player> GetPlayers() => _context.Players.ToList();
-        //add a new player to the database
-        public void AddPlayer(Player player)
+        public List<Players> GetPlayers() => _context.Players.ToList();
+
+        public void AddPlayer(Players player)
         {
             _context.Players.Add(player);
             _context.SaveChanges();

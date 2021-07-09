@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace home_assingment_7.Models
 {
-    public partial class Score
+    public partial class Scores
     {
         public int Id { get; set; }
         public DateTime TimeStamp { get; set; }
@@ -14,7 +14,7 @@ namespace home_assingment_7.Models
         public int PlayerId { get; set; }
         public int LevelId { get; set; }
 
-        public virtual Level Level { get; set; }
-        public virtual Player Player { get; set; }
+        public virtual Levels Level { get; set; }
+        public virtual Players Player { get; set; }
     }
 }

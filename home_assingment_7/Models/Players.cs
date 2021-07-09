@@ -5,17 +5,17 @@ using System.Collections.Generic;
 
 namespace home_assingment_7.Models
 {
-    public partial class Player
+    public partial class Players
     {
-        public Player()
+        public Players()
         {
-            Scores = new HashSet<Score>();
+            Scores = new HashSet<Scores>();
         }
 
         public int Id { get; set; }
         public string UserName { get; set; }
         public int CountryCode { get; set; }
 
-        public virtual ICollection<Score> Scores { get; set; }
+        public virtual ICollection<Scores> Scores { get; set; }
     }
 }

@@ -5,16 +5,16 @@ using System.Collections.Generic;
 
 namespace home_assingment_7.Models
 {
-    public partial class Level
+    public partial class Levels
     {
-        public Level()
+        public Levels()
         {
-            Scores = new HashSet<Score>();
+            Scores = new HashSet<Scores>();
         }
 
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public virtual ICollection<Score> Scores { get; set; }
+        public virtual ICollection<Scores> Scores { get; set; }
     }
 }

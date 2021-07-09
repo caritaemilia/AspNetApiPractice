@@ -6,10 +6,10 @@ using home_assingment_7.Models;
 
 namespace home_assingment_7.Repositories
 {
-    // getting all levels from, and adding a new level to the database<br>
-    public class LevelsRepo : ILevelData
+ 
+    public class LevelsRepo : ILevelsData
     {
-        //ínjecting the dbcontext to repo
+
 
         private readonly home_assignment_7Context _context;
         
@@ -18,11 +18,11 @@ namespace home_assingment_7.Repositories
             _context = context;
         }
 
-        //get all levels from the database
-        public List<Level> GetLevels() => _context.Levels.ToList();
+
+        public List<Levels> GetLevels() => _context.Levels.ToList();
      
-        //add a new level to the database
-        public void AddLevel(Level level)
+
+        public void AddLevel(Levels level)
         {
 
             _context.Levels.Add(level);

@@ -6,9 +6,15 @@ using System.Threading.Tasks;
 
 namespace home_assingment_7.Repositories
 {
-    public interface IPlayerData
+    public interface IScoresData
     {
-        List<Player> GetPlayers();
-        void AddPlayer(Player player);
+        List<Scores> GetScores();
+
+        Scores GetScore(int id);
+
+        void AddScore(Scores score);
+
+        void DeleteScore(Scores score);
+
     }
 }
